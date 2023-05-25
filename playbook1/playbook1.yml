@@ -1,0 +1,20 @@
+---
+- name: Hello World
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - debug:
+        msg:
+          - "Hello World!"
+    - shell: 'echo "Hello World!"'
+- name: Ansible facts
+  hosts: localhost
+  gather_facts: yes
+
+  tasks:
+    - name: Output Ansible facts
+      debug:
+        msg:
+          - "OS destrib: {{ ansible_destribution }}"
+          - "IP: {{ ansible_default_ipv4.address }} host: {{ ansible_fqdn }}"
