@@ -17,4 +17,4 @@
       debug:
         msg:
           - "OS destrib: {{ ansible_destribution }}"
-          - "IP: {{ ansible_default_ipv4.address }} host: {{ ansible_fqdn }}"
+          - "IP: {{ ansible_default_ipv4.address }} host: "
