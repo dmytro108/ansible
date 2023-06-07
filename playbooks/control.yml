@@ -10,11 +10,13 @@ tasks:
     owner: ubuntu
     group: ubuntu
     mode: '0600'
+- name: Add ansible repo
+  ansible.builtin.shell:
+    cmd: sudo apt-add-repository ppa:ansible/ansible
+- name: Update package manager
+  ansible.builtin.shell:
+    cmd: apt update
 - name: Install Ansible
-  - ansible.builtin.shell:
-      cmd: sudo apt-add-repository ppa:ansible/ansible
-  - ansible.builtin.shell:
-      cmd: apt update
-  - ansible.builtin.package:
-      name: ansible
-      state: present
+  ansible.builtin.package:
+    name: ansible
+    state: present
