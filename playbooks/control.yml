@@ -13,7 +13,7 @@
       mode: '0600'
   - name: Add ansible repo
     ansible.builtin.shell:
-      cmd: sudo apt-add-repository ppa:ansible/ansible
+      cmd: apt-add-repository ppa:ansible/ansible -y
   - name: Update package manager
     ansible.builtin.shell:
       cmd: apt update
