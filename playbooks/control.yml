@@ -1,0 +1,19 @@
+---
+name: Provisioning Control host
+hosts: mgm
+
+tasks:
+- name: Put ssh privat key
+  ansible.builtin.copy:
+    src: $HOME/.ssh/id_ed25519
+    dest: $HOME/.ssh/id_ed25519
+    owner: ubuntu
+    group: ubuntu
+    mode: '0600'
+- name: Install Ansible
+  ansible.builtin.shell:
+    cmd: sudo apt-add-repository ppa:ansible/ansible
+    cmd: apt update
+  ansible.builtin.package:
+    name: ansible
+    state: present
