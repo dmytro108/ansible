@@ -13,6 +13,7 @@ tasks:
 - name: Install Ansible
   ansible.builtin.shell:
     cmd: sudo apt-add-repository ppa:ansible/ansible
+  ansible.builtin.shell:
     cmd: apt update
   ansible.builtin.package:
     name: ansible
