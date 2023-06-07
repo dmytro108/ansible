@@ -7,6 +7,7 @@
     ansible.builtin.copy:
       src: $HOME/.ssh/id_ed25519
       dest: $HOME/.ssh/id_ed25519
+      force: true
       owner: ubuntu
       group: ubuntu
       mode: '0600'
