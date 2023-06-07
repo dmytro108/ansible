@@ -11,10 +11,10 @@ tasks:
     group: ubuntu
     mode: '0600'
 - name: Install Ansible
-  ansible.builtin.shell:
-    cmd: sudo apt-add-repository ppa:ansible/ansible
-  ansible.builtin.shell:
-    cmd: apt update
-  ansible.builtin.package:
-    name: ansible
-    state: present
+  - ansible.builtin.shell:
+      cmd: sudo apt-add-repository ppa:ansible/ansible
+  - ansible.builtin.shell:
+      cmd: apt update
+  - ansible.builtin.package:
+      name: ansible
+      state: present
