@@ -5,7 +5,7 @@
   tasks:
   - name: Put ssh privat key
     ansible.builtin.copy:
-      src: $HOME/.ssh/id_ed25519
+      src: ~/.ssh/id_ed25519
       dest: /home/ubuntu/.ssh/id_ed25519
       force: true
       owner: ubuntu
